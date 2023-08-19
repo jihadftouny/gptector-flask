@@ -3,10 +3,12 @@ from model.model import TextClassifier
 
 application = Flask(__name__)
 
-# Load the classifier when the application starts
+# Load the classifier when the app starts
 classifier = TextClassifier(
-    './model/trained_model.pkl',
-    './model/vectorizer.pkl'
+    './model/trained_model_lr.pkl',
+    './model/vectorizer_lr.pkl',
+    './model/trained_model_xgb.pkl',
+    './model/vectorizer_xgb.pkl'
 )
 
 @application.route('/', methods=['GET', 'POST'])
